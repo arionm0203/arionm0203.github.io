@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Engineering portfolio for Ariobarzan Navidi Moghadam, Mechatronic Systems Engineering student at Simon Fraser University." />
+  <title>Ariobarzan Navidi Moghadam | Engineering Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-2: #14b8a6;
+      --accent-light: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 92px 0 68px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(20, 184, 166, 0.22), transparent 32%),
+        linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #2563eb 100%);
+      color: white;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.35rem, 5vw, 4.55rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 730px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 13px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      width: fit-content;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-primary:hover,
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.42);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      padding: 14px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.55rem;
+    }
+
+    .stat span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.93rem;
+    }
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      color: var(--primary);
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-title p {
+      max-width: 680px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #eff6ff, #ecfeff);
+      color: #1e3a8a;
+      padding: 14px 16px;
+      border-radius: 15px;
+      font-weight: 800;
+      border: 1px solid #bfdbfe;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      padding: 20px;
+    }
+
+    .mini-card h3 {
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      min-height: 420px;
+    }
+
+    .project-image {
+      position: relative;
+      min-height: 238px;
+      background: linear-gradient(135deg, #e0f2fe, #dbeafe 50%, #f8fafc);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      text-align: center;
+      padding: 20px;
+      font-weight: 800;
+    }
+
+    .project-card.featured .project-image {
+      min-height: 100%;
+      border-bottom: none;
+      border-right: 1px solid var(--border);
+    }
+
+    .project-image::after {
+      content: attr(data-label);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      z-index: 1;
+    }
+
+    .project-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .project-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      color: var(--primary);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .project-card.featured h3 {
+      font-size: 1.55rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      height: fit-content;
+      padding: 6px 10px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tag.green {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-card ul {
+      margin: 0 0 16px 18px;
+      color: var(--muted);
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .tool {
+      padding: 6px 9px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: #374151;
+      font-weight: 700;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+    }
+
+    .skill-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .skill-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .resume-band {
+      background: var(--primary);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .resume-band p {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 740px;
+      margin-top: 8px;
+    }
+
+    .resume-band .btn {
+      background: white;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-card {
+      padding: 22px;
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-card a,
+    .contact-card p {
+      color: var(--primary);
+      font-weight: 800;
+      overflow-wrap: break-word;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about-card,
+      .education-grid,
+      .projects-grid,
+      .project-card.featured,
+      .skills-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-column: span 1;
+      }
+
+      .project-card.featured .project-image {
+        min-height: 250px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-title,
+      .resume-band {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 72px 0 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-content">
+      <a class="logo" href="#">Ariobarzan Navidi Moghadam</a>
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Mechatronic Systems Engineering Student at Simon Fraser University</span>
+        <h1>Engineering portfolio in robotics, CAD design, electronics, FEA, and prototyping.</h1>
+        <p>
+          I build electromechanical systems that combine mechanical design, embedded electronics,
+          CAD, 3D printing, circuit testing, and practical prototyping. My strongest work includes
+          robot mechanical design, automated systems, SolidWorks assemblies, FEA analysis, and PCB/electronics projects.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="#resume">Download Resume</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Portfolio summary">
+        <h2>Core Strengths</h2>
+        <div class="stat">
+          <strong>Robotics</strong>
+          <span>Firefighting robot, automated plant pot system, sensors, actuators, and controls</span>
+        </div>
+        <div class="stat">
+          <strong>Mechanical Design</strong>
+          <span>SolidWorks CAD, assemblies, drivetrain layout, fasteners, 3D-printed prototypes</span>
+        </div>
+        <div class="stat">
+          <strong>Electronics</strong>
+          <span>PCB work, soldering, ESP32, Arduino, circuits, lab instruments, and debugging</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Focused on mechanical design, robotics, electronics, automation, and hands-on engineering projects.</p>
+        </div>
+
+        <div class="about-card card">
+          <div>
+            <p>
+              I am a Bachelor of Applied Sciences student in Mechatronic Systems Engineering at Simon Fraser University,
+              with an expected graduation of 2028–2029. My work connects mechanical design, electronics, controls,
+              manufacturing, and testing.
+            </p>
+            <p>
+              I am especially interested in mechanical design roles, robotics projects, PCB/electronics work,
+              CAD-based product development, and co-op opportunities where I can contribute to practical engineering systems.
+            </p>
+            <p>
+              My project experience includes leading the mechanical design of a firefighting robot, co-leading an automated
+              plant pot system, building embedded electronics prototypes, completing SolidWorks CAD/FEA studies, and assembling circuits/PCBs.
+            </p>
+          </div>
+
+          <div class="highlight-list">
+            <div class="highlight">Mechanical Lead — EWB SFU Firefighting Robot</div>
+            <div class="highlight">Co-Lead — EWB SFU Automated Plant Pot System</div>
+            <div class="highlight">SolidWorks CAD, FEA, 3D Printing, Electronics</div>
+            <div class="highlight">Siemens SMSCP Level 1 Assistant Certification</div>
+          </div>
+        </div>
+
+        <div class="education-grid">
+          <div class="mini-card card">
+            <h3>Education</h3>
+            <p>Simon Fraser University<br />BASc, Mechatronic Systems Engineering<br />Expected 2028–2029</p>
+          </div>
+          <div class="mini-card card">
+            <h3>Relevant Coursework</h3>
+            <p>Circuits, microelectronics, statics, dynamics, robotics design, digital logic, PLCs, signals and systems, MATLAB, C++, Python.</p>
+          </div>
+          <div class="mini-card card">
+            <h3>Certification</h3>
+            <p>Siemens SMSCP Level 1 Assistant Certification through SFU.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Projects are ordered from most relevant/significant to supporting experience for engineering applications.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Upload your image as: images/firefighting-robot.jpg -->
+          <article class="project-card featured card">
+            <div class="project-image" data-label="Add image: images/firefighting-robot.jpg">
+              <img src="images/firefighting-robot.jpg" alt="EWB SFU firefighting robot CAD model or prototype" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <div class="project-top">
+                <div>
+                  <h3>Firefighting Robot</h3>
+                  <div class="tag-row">
+                    <span class="tag">Mechanical Lead</span>
+                    <span class="tag green">EWB SFU Project</span>
+                  </div>
+                </div>
+              </div>
+              <p>
+                EWB SFU project focused on designing and prototyping a small-scale firefighting robot.
+                I lead the mechanical side and coordinate with electronics and controls teams to keep the design
+                practical, manufacturable, and compatible with the full system.
+              </p>
+              <ul>
+                <li>Designed the robot chassis, exterior shell, interior component layout, drivetrain layout, and fastener/assembly system.</li>
+                <li>Developed the design for a first prototype using ordered electronics and 3D-printed parts.</li>
+                <li>Organized mechanical team meetings and helped align the mechanical design with controls/electronics requirements.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">SolidWorks</span>
+                <span class="tool">Mechanical Design</span>
+                <span class="tool">Robotics</span>
+                <span class="tool">3D Printing</span>
+                <span class="tool">Drivetrain Layout</span>
+                <span class="tool">Team Leadership</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/automated-plant-pot.jpg -->
+          <article class="project-card featured card">
+            <div class="project-image" data-label="Add image: images/automated-plant-pot.jpg">
+              <img src="images/automated-plant-pot.jpg" alt="Automated plant pot CAD model or prototype" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <div class="project-top">
+                <div>
+                  <h3>Automated Plant Pot System</h3>
+                  <div class="tag-row">
+                    <span class="tag">Co-Lead</span>
+                    <span class="tag green">EWB SFU Project</span>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Co-lead for an EWB SFU automated plant pot system designed to support plant growth through a mechanical container,
+                automatic water supply, growth lighting, controls, and possible nutrient delivery.
+              </p>
+              <ul>
+                <li>Helped define the project vision, system goals, and subteam responsibilities.</li>
+                <li>Worked on the mechanical container/exterior model and researched equipment for the intended functions.</li>
+                <li>Managed coordination between mechanical, electrical, and controls workstreams.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">CAD</span>
+                <span class="tool">Automation</span>
+                <span class="tool">Sensors</span>
+                <span class="tool">Controls</span>
+                <span class="tool">System Design</span>
+                <span class="tool">Project Leadership</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/lecture-hall-seat-tracker.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/lecture-hall-seat-tracker.jpg">
+              <img src="images/lecture-hall-seat-tracker.jpg" alt="Lecture hall seat tracker prototype with ESP32 and LCD" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>Lecture Hall Seat Tracking System</h3>
+              <div class="tag-row">
+                <span class="tag">Course Project Lead</span>
+                <span class="tag green">Embedded System</span>
+              </div>
+              <p>
+                Real-time seat availability system for lecture halls using tilt sensors under seats, an ESP32,
+                an MCP23017 I/O expander, and an LCD display showing row occupancy/free-seat count.
+              </p>
+              <ul>
+                <li>Contributed to the concept, CAD diagrams, presentations, wiring, ESP32 programming, soldering, testing, and troubleshooting.</li>
+                <li>Designed as a low-cost, local-only system that does not require Wi-Fi, an app, or a website.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">ESP32</span>
+                <span class="tool">C++</span>
+                <span class="tool">LCD</span>
+                <span class="tool">Tilt Sensors</span>
+                <span class="tool">Soldering</span>
+                <span class="tool">Troubleshooting</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/butterfly-valve.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/butterfly-valve.jpg">
+              <img src="images/butterfly-valve.jpg" alt="Industrial butterfly valve redesign CAD render" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>Industrial Butterfly Valve Redesign</h3>
+              <div class="tag-row">
+                <span class="tag">CAD Redesign</span>
+                <span class="tag green">Mechanical Design</span>
+              </div>
+              <p>
+                Redesigned a substandard butterfly valve CAD model into a more industrial-standard valve design using SolidWorks.
+                The redesign focused on durability, sealing, manufacturability, and clearer functional operation.
+              </p>
+              <ul>
+                <li>Added a rubber/inner seal, improved connection points, simplified manufacturing, and created a motion study.</li>
+                <li>Designed around an approximately 3.85-inch valve diameter and pressure consideration near 27 psi / 300 lb.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">SolidWorks</span>
+                <span class="tool">Motion Study</span>
+                <span class="tool">DFM</span>
+                <span class="tool">Mechanical Components</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/ducati-swingarm-fea.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/ducati-swingarm-fea.jpg">
+              <img src="images/ducati-swingarm-fea.jpg" alt="Ducati Panigale swingarm FEA analysis" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>FEA Analysis of Ducati Panigale Swingarm</h3>
+              <div class="tag-row">
+                <span class="tag">FEA</span>
+                <span class="tag green">Mechanical Analysis</span>
+              </div>
+              <p>
+                Analyzed the stress, deformation, and failure behavior of a Ducati Panigale V2 single-sided swingarm using
+                simplified beam assumptions, representative dimensions, and material properties.
+              </p>
+              <ul>
+                <li>Studied rear-wheel reaction, acceleration, braking, cornering, bending, torsion, fatigue, and design alternatives.</li>
+                <li>Reported results included about 21.9 MPa von Mises stress, factor of safety around 6.6, and about 0.63 mm tip deflection.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">FEA</span>
+                <span class="tool">Load Analysis</span>
+                <span class="tool">Von Mises Stress</span>
+                <span class="tool">Fatigue Discussion</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/combustion-engine-cad.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/combustion-engine-cad.jpg">
+              <img src="images/combustion-engine-cad.jpg" alt="Four-cylinder combustion engine CAD assembly" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>Four-Cylinder Combustion Engine CAD</h3>
+              <div class="tag-row">
+                <span class="tag">SolidWorks Assembly</span>
+              </div>
+              <p>
+                Created a SolidWorks CAD assembly of a four-cylinder combustion engine mechanism, including pistons,
+                connecting rods, crankshaft, crank webs/counterweights, shafts, and support features.
+              </p>
+              <div class="tools">
+                <span class="tool">SolidWorks</span>
+                <span class="tool">CAD Assembly</span>
+                <span class="tool">Mechanical Components</span>
+                <span class="tool">Mechanism Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/combustion-engine-fea.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/combustion-engine-fea.jpg">
+              <img src="images/combustion-engine-fea.jpg" alt="Combustion engine part SolidWorks Simulation FEA plots" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>FEA Analysis on Combustion Engine Parts</h3>
+              <div class="tag-row">
+                <span class="tag">SolidWorks Simulation</span>
+              </div>
+              <p>
+                Used SolidWorks Simulation to analyze mechanical and thermal behavior of engine-related parts, including
+                rod/pin-style geometry, piston geometry, and crankshaft geometry.
+              </p>
+              <ul>
+                <li>Created stress, displacement, strain, mesh quality, thermal/stress, and factor-of-safety analyses.</li>
+                <li>Compared calculated yield/shear forces with simulated von Mises stresses and safety factors.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">SolidWorks Simulation</span>
+                <span class="tool">Stress Analysis</span>
+                <span class="tool">Thermal Analysis</span>
+                <span class="tool">Factor of Safety</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/pcb-eagle.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/pcb-eagle.jpg">
+              <img src="images/pcb-eagle.jpg" alt="PCB design layout made in Autodesk Eagle" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>PCB Design Using Autodesk Eagle</h3>
+              <div class="tag-row">
+                <span class="tag">PCB Design</span>
+                <span class="tag green">Electronics</span>
+              </div>
+              <p>
+                Designed PCB layouts in Autodesk Eagle with routed copper traces, through-hole pads, resistor footprints,
+                IC footprint placement, and terminal/test-pad areas.
+              </p>
+              <div class="tools">
+                <span class="tool">Autodesk Eagle</span>
+                <span class="tool">PCB Layout</span>
+                <span class="tool">Routing</span>
+                <span class="tool">Electronics Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/am-radio.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/am-radio.jpg">
+              <img src="images/am-radio.jpg" alt="AM radio circuit prototype and testing setup" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>ENSC220 AM Radio Project</h3>
+              <div class="tag-row">
+                <span class="tag">Circuit Build</span>
+              </div>
+              <p>
+                Built and demonstrated an AM radio circuit with a tuning section, diode detector/filter stage,
+                audio amplifier, and speaker/3.5 mm audio output.
+              </p>
+              <ul>
+                <li>Assembled the circuit on a breadboard, tuned using an inductor/capacitors, and verified output through a speaker or earphone.</li>
+              </ul>
+              <div class="tools">
+                <span class="tool">Analog Circuits</span>
+                <span class="tool">Breadboarding</span>
+                <span class="tool">Function Generator</span>
+                <span class="tool">Power Supply</span>
+                <span class="tool">Debugging</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Upload your image as: images/led-dice-pcb.jpg -->
+          <article class="project-card card">
+            <div class="project-image" data-label="Add image: images/led-dice-pcb.jpg">
+              <img src="images/led-dice-pcb.jpg" alt="Touch-sensor LED dice PCB project" onerror="this.remove()" />
+            </div>
+            <div class="project-content">
+              <h3>Touch-Sensor LED Dice PCB</h3>
+              <div class="tag-row">
+                <span class="tag">PCB Assembly</span>
+              </div>
+              <p>
+                Designed and assembled a touch-sensor-activated dice system represented with LEDs on a PCB.
+                Personally soldered the board and completed the physical assembly.
+              </p>
+              <div class="tools">
+                <span class="tool">PCB Assembly</span>
+                <span class="tool">Soldering</span>
+                <span class="tool">LEDs</span>
+                <span class="tool">Touch Sensor</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Technical Skills</h2>
+          <p>Tools and technical areas developed through coursework, projects, and hands-on engineering work.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card card">
+            <h3>Mechanical Design & CAD</h3>
+            <ul>
+              <li>SolidWorks CAD, assemblies, and technical modelling</li>
+              <li>FEA analysis using SolidWorks Simulation</li>
+              <li>3D printing and prototype-focused design</li>
+              <li>Fasteners, gears, belts, chains, shafts, couplings</li>
+              <li>Brakes, clutches, motors, and drivetrain concepts</li>
+              <li>Material selection using Granta EduPack</li>
+            </ul>
+          </div>
+
+          <div class="skill-card card">
+            <h3>Electronics & Controls</h3>
+            <ul>
+              <li>PCB assembly, soldering, and circuit debugging</li>
+              <li>Altium Designer, Autodesk Eagle, LTspice, Proteus</li>
+              <li>Oscilloscope, function generator, and power supply</li>
+              <li>RC, RL, RLC circuits, op-amps, and frequency response</li>
+              <li>Switches, relays, contactors, and relay logic</li>
+              <li>PLC programming with Logix 5000</li>
+            </ul>
+          </div>
+
+          <div class="skill-card card">
+            <h3>Programming, Robotics & Automation</h3>
+            <ul>
+              <li>Python, C++, MATLAB, and Simulink</li>
+              <li>Arduino, ESP32, Raspberry Pi, sensors, and actuators</li>
+              <li>Robotics design and electromechanical integration</li>
+              <li>FluidSIM hydraulics, pneumatics, and electrical pneumatics</li>
+              <li>Sequential function charts and displacement-step diagrams</li>
+              <li>Currently learning CFD simulation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="container">
+        <div class="resume-band">
+          <div>
+            <h2>Resume</h2>
+            <p>
+              Download my resume for a focused summary of my education, technical skills, project experience,
+              leadership, certifications, and engineering background.
+            </p>
+          </div>
+          <a class="btn" href="resume.pdf">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Open to engineering co-op opportunities, project collaboration, and technical discussions.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card card">
+            <h3>Email</h3>
+            <a href="mailto:arionm0203@gmail.com">arionm0203@gmail.com</a>
+          </div>
+
+          <div class="contact-card card">
+            <h3>Phone</h3>
+            <a href="tel:+17785225643">(778) 522-5643</a>
+          </div>
+
+          <div class="contact-card card">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/arionavidi0203" target="_blank" rel="noopener noreferrer">linkedin.com/in/arionavidi0203</a>
+          </div>
+
+          <div class="contact-card card">
+            <h3>Location</h3>
+            <p>Coquitlam, British Columbia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Ariobarzan Navidi Moghadam. Built with GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
